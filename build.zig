@@ -42,12 +42,13 @@ pub fn build(b: *std.Build) void {
     //    "-DHAVE_CONFIG_H",
     //}) catch unreachable;
 
-    const source_files = [_][]const u8{ "src/google/protobuf/any.pb-c.c", "src/google/protobuf/api.pb-c.c", "src/google/protobuf/duration.pb-c.c", "src/google/protobuf/empty.pb-c.c", "src/google/protobuf/field_mask.pb-c.c", "src/google/protobuf/source_context.pb-c.c", "src/google/protobuf/struct.pb-c.c", "src/google/protobuf/timestamp.pb-c.c", "src/google/protobuf/type.pb-c.c", "src/google/protobuf/wrappers.pb-c.c" };
+    const source_files = [_][]const u8{ "src/google/protobuf/any.pb-c.c", "src/google/protobuf/api.pb-c.c", "src/google/protobuf/duration.pb-c.c", "src/google/protobuf/descriptor.pb-c.c", "src/google/protobuf/empty.pb-c.c", "src/google/protobuf/field_mask.pb-c.c", "src/google/protobuf/source_context.pb-c.c", "src/google/protobuf/struct.pb-c.c", "src/google/protobuf/timestamp.pb-c.c", "src/google/protobuf/type.pb-c.c", "src/google/protobuf/wrappers.pb-c.c" };
 
     lib.linkLibC();
     lib.installHeader(b.path("src/google/protobuf/any.pb-c.h"), "google/protobuf/any.pb-c.h");
     lib.installHeader(b.path("src/google/protobuf/api.pb-c.h"), "google/protobuf/api.pb-c.h");
     lib.installHeader(b.path("src/google/protobuf/duration.pb-c.h"), "google/protobuf/duration.pb-c.h");
+    lib.installHeader(b.path("src/google/protobuf/descriptor.pb-c.h"), "google/protobuf/descriptor.pb-c.h");
     lib.installHeader(b.path("src/google/protobuf/empty.pb-c.h"), "google/protobuf/empty.pb-c.h");
     lib.installHeader(b.path("src/google/protobuf/field_mask.pb-c.h"), "google/protobuf/field_mask.pb-c.h");
     lib.installHeader(b.path("src/google/protobuf/source_context.pb-c.h"), "google/protobuf/source_context.pb-c.h");
